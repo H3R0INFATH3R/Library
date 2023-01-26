@@ -8,21 +8,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="nav-bar">
-        <h1 class="library-title">
-            Library
-        </h1>
-        <button class="log-in">
-            Log in
-        </button>
-    </div>
-    <div class="main-content">
-        <div class="books">
-            <div class="display-book">
-                <button id="add-button">+</button>
+    <div id="body">
+        <div class="nav-bar">
+            <h1 class="library-title">
+                Library
+            </h1>
+            <button class="log-in">
+                Log in
+            </button>
+        </div>
+        <div class="main-content">
+            <div class="books">
+                <!-- <div class="display-book"> -->
+                    <button id="add-button">+</button>
+                <!-- </div> -->
             </div>
         </div>
-        <!-- <span>Copyright  2023 Dagem</span> -->
     </div>
     <div class="add-prompt">
         <button class="close-prompt">x</button>
@@ -43,9 +44,9 @@
             <input type="checkbox" name="Status" id="status">
             <label for="status"> I have read this book.</label>
         </form>
-        <br>
-        <button type="submit" class="add-book">Add</button>
+        <button class="add-book">Add</button>
     </div>
+    <!-- <span>Copyright  2023 Dagem</span> -->
     <script src="script.js"></script>
 </body>
 </html>

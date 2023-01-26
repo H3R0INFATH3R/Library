@@ -15,6 +15,7 @@
 body {
     font-family: 'Palanquin Dark', sans-serif;
     background-color: var(--gray);
+    width: 100%;
 }
 
 input {
@@ -34,6 +35,15 @@ input#status {
 	border-radius: 3px;
 	display: inline-block;
 	position: relative;
+}
+
+input#status:checked:after {
+    content: '\2714';
+	font-size: 14px;
+	position: absolute;
+	top: 0px;
+	left: 3px;
+	color: #99a1a7;
 }
 
 label {
@@ -102,11 +112,15 @@ label {
 
     font-weight: bold;
     font-size: 38px;
+
+    background-color: var(--white);
 }
 
 .add-book {
     font-weight: normal;
     font-size: 14px;
+
+    background-color: var(--gray);
 }
 
 #add-button:hover, .add-book:hover, .close-prompt:hover {
@@ -125,19 +139,19 @@ label {
     height: max-content;
 
     position: absolute;
-    top: -50%;
-    left: 42%;
+    top: 45%;
+    left: 45%;
+    margin-top: -50px;
+    margin-left: -50px;
 
     display: grid;
-}
 
-.add-prompt-show {
-    top: 38%;
+    visibility: hidden;
 }
 
 .close-prompt {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
 
     border: none;
     border-radius: 50%;

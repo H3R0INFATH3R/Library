@@ -1,6 +1,13 @@
 const main = document.querySelector('.books')
 const add = document.querySelector('#add-button')
 const prompt = document.querySelector('.add-prompt')
+const close = document.querySelector('.close-prompt')
+const submit = document.querySelector('.add-submit')
+const bookName = document.querySelector('#book-name')
+const author = document.querySelector('#author')
+const pages = document.querySelector('#pages')
+const readStatus = document.querySelector('#status')
+const body = document.querySelector('#body')
 let myLibrary = []
 
 function Book(title, author, pages, read) {
@@ -56,5 +63,34 @@ for (let element in myLibrary) {
 }
 
 add.addEventListener('click', () => {
-    prompt.classList.add('add-prompt-show')
+    prompt.style.visibility = 'visible'
+    // body.style.opacity = '0.2'
+    body.style.cssText = `
+        font-family: 'Palanquin Dark', sans-serif;
+        background-color: gray;
+        pointer-events: none';
+        z-index: 100;
+        opacity: .3;`
+})
+
+close.addEventListener('click', () => {
+    prompt.style.visibility = 'hidden'
+    body.style.cssText = `
+        font-family: 'Palanquin Dark', sans-serif;
+        background-color: var(--gray);
+        `
+        bookName.value = ''
+        author.value = ''
+        pages.value = ''
+})
+
+// let i = 1
+
+submit.addEventListener('click', () => {
+    // let bookInput = new Book(bookName.value, author.value, pages.value, readStatus.value)
+    // addBookToLibrary(bookInput)
+    bookName.value = ''
+    author.value = ''
+    pages.value = ''
+    console.log('Submited')
 })
