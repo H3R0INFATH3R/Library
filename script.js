@@ -41,16 +41,40 @@ const refreshLibrary = () => {
     displayPages.innerHTML = `${book.pages} pages`
     displayBook.appendChild(displayPages)
 
-    const displayStatus = document.createElement('p')
+    const displayStatus = document.createElement('button')
     displayStatus.classList.add('display-status')
+    displayStatus.style.color = 'white'
     if (book.read) {
         displayStatus.innerHTML = 'Read'
-        displayStatus.style.color = 'green'
+        displayStatus.style.background = 'green'
     } else {
         displayStatus.innerHTML = 'Not Read'
-        displayStatus.style.color ='red'
+        displayStatus.style.background ='red'
     }
     displayBook.appendChild(displayStatus)
+
+    displayStatus.addEventListener('click', () => {
+        if (displayStatus.innerHTML === 'Read') {
+            displayStatus.innerHTML = 'Not Read'
+            displayStatus.style.background ='red'
+            console.log('click')
+        } else {
+            displayStatus.innerHTML = 'Read'
+            displayStatus.style.background = 'green'
+            console.log('clicked')
+        }
+    })
+
+    const removeBook = document.createElement('button')
+    removeBook.classList.add('remove-book')
+    removeBook.innerHTML = 'Remove'
+    displayBook.appendChild(removeBook)
+
+    removeBook.addEventListener('click', () => {
+        // let test = this.parentNode
+        removeBook.parentNode.remove()
+        // this.parentNode.remove()
+    })
 
     main.appendChild(displayBook)
 }
@@ -77,8 +101,6 @@ close.addEventListener('click', () => {
     readStatus.checked = false
 })
 
-// let i = 1
-
 submit.addEventListener('click', () => {
     if (bookName.value && author.value && pages.value) {
         let bookInput = new Book(bookName.value, author.value, pages.value, readStatus.checked)
@@ -93,7 +115,5 @@ submit.addEventListener('click', () => {
         readStatus.checked = false
         refreshLibrary()
         prompt.style.visibility = 'hidden'
-
-        console.log(readStatus.value)
     }
 })

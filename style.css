@@ -9,7 +9,7 @@
 :root {
     --white: #ffffff;
     --black: #000000;
-    --gray: #e0e0e0;
+    --gray: #e2dfdf;
 }
 
 body {
@@ -172,4 +172,22 @@ label {
     justify-self: center;
 
     margin-top: 12px;
+}
+
+.display-status, .remove-book {
+    font-size: 14px;
+    font-weight: bold;
+
+    width: 100%;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 4px;
+}
+
+.display-status:hover, .remove-book:hover {
+    font-size: 14.5px;
+
+    padding: 4.5px;
 }
