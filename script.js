@@ -57,11 +57,9 @@ const refreshLibrary = () => {
         if (displayStatus.innerHTML === 'Read') {
             displayStatus.innerHTML = 'Not Read'
             displayStatus.style.background ='red'
-            console.log('click')
         } else {
             displayStatus.innerHTML = 'Read'
             displayStatus.style.background = 'green'
-            console.log('clicked')
         }
     })
 
